@@ -1,0 +1,206 @@
+<com.time.cat.ThemeSystem.widgets.TintRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_color_primary"
+    tools:context="com.time.cat.component.activity.user.UserDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@color/android_blue_dark"
+        android:transitionName="background">
+
+        <View
+            android:id="@+id/user_avatar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </View>
+
+        <ImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="60dp"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/avatar_default"
+            android:transitionName="transition"/>
+
+        <Button
+            android:id="@+id/linkButton"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Vincular"
+            android:textColor="#fff"/>
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/status_bar_height"
+        android:title="Users"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/user_detail_rl"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@+id/top">
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                app:iiv_color="@color/dark_grey_home"
+                app:iiv_icon="cmd-account"
+                app:iiv_padding="3dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:hint="Name"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textColor="@color/dark_grey_text"/>
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_detail_rl">
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="30dp"
+                app:iiv_color="@color/dark_grey_home"
+                app:iiv_icon="cmd-email"
+                app:iiv_padding="3dp"/>
+
+            <TextView
+                android:id="@+id/user_detail_email"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:text="Email"
+                android:textColor="@color/dark_grey_text"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/grid_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:background="@color/white"
+        android:visibility="visible">
+
+        <HorizontalScrollView
+            android:id="@+id/colorScroll"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/color_chooser"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <!--<include layout="@layout/color_chooser_item"/>-->
+                <!--<include layout="@layout/color_chooser_item"/>-->
+                <!--<include layout="@layout/color_chooser_item"/>-->
+                <!--<include layout="@layout/color_chooser_item"/>-->
+                <!--<include layout="@layout/color_chooser_item"/>-->
+                <!--<include layout="@layout/color_chooser_item"/>-->
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp"
+            android:horizontalSpacing="20dp"
+            android:numColumns="3"
+            android:paddingBottom="0dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="0dp"
+            android:scrollbars="none"
+            android:verticalSpacing="0dp"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/top"
+        android:alpha="0.4"
+        android:background="@drawable/presentation_box_shadow_top"/>
+
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/avatar_change"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/top"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="-35dp"
+        android:transitionName="fab"
+        fab:fab_colorNormal="#efefef"
+        fab:fab_colorPressed="#b7b7b7"
+        fab:fab_icon="@drawable/ic_autorenew_white_48dp"/>
+
+</com.time.cat.ThemeSystem.widgets.TintRelativeLayout>
